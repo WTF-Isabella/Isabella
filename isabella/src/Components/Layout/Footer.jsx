@@ -98,22 +98,26 @@ export default function Footer() {
             </p>
             
             <form onSubmit={handleSubmit} className="mb-6">
-              <div className="flex">
-                <input
+              <div className="flex ">
+                <div dir='ltr'>
+                  <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email"
                   required
-                  className="flex-1 px-4 py-2 bg-white text-black text-sm focus:outline-none"
+                  className="flex-1 px-4 py-2 bg-white text-black text-sm focus:outline-none rounded-s-xl"
                 />
-                <button
+                </div>
+                <div dir='rtl'>
+                  <button
                   type="submit"
-                  className="px-4 py-2 bg-white text-black hover:bg-gray-200 transition-colors"
+                  className="px-4 py-2 bg-white text-black hover:bg-gray-200 transition-colors rounded-s-xl border-l-1 cursor-pointer"
                   aria-label="Subscribe"
                 >
-                  <Mail size={18} />
+                  <Mail size={20} />
                 </button>
+                </div>
               </div>
             </form>
 
@@ -124,48 +128,32 @@ export default function Footer() {
                 <Link
                   href="https://instagram.com/isabella"
                   target="_blank"
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram size={20} />
+                  <i className="fa-brands fa-instagram text-xl hover:text-red-600"></i>
                 </Link>
                 <Link
                   href="https://facebook.com/isabella"
                   target="_blank"
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white transition-colors"
                   aria-label="Facebook"
                 >
-                  <Facebook size={20} />
-                </Link>
-                <Link
-                  href="https://twitter.com/isabella"
-                  target="_blank"
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter size={20} />
-                </Link>
-                <Link
-                  href="https://wa.me/1234567890"
-                  target="_blank"
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
-                  aria-label="WhatsApp"
-                >
-                  <MessageCircle size={20} />
+                  <i className="fa-brands fa-facebook-f text-xl hover:text-blue-600"></i>
                 </Link>
                 <Link
                   href="mailto:hello@isabella.com"
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white transition-colors"
                   aria-label="Email"
                 >
-                  <Mail size={20} />
+                  <i className="fa-regular fa-envelope text-xl hover:text-red-600"></i>
                 </Link>
                 <Link
                   href="tel:+1234567890"
-                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors"
+                  className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white transition-colors"
                   aria-label="Phone"
                 >
-                  <Phone size={20} />
+                  <i className="fa-solid fa-phone text-xl hover:text-blue-600"></i>
                 </Link>
               </div>
               <p className="text-sm text-gray-400">Follow us for style inspiration and latest updates</p>
@@ -177,9 +165,22 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             {/* Left - Links */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <p className="text-center md:text-right">
+              Developed by{' '}
+              <Link href="https://www.ikrastudio.in/" target='_blank' className="text-white hover:underline">
+                iKRA Studio
+              </Link>
+            </p>
+
+            {/* Center - Copyright */}
+            <p className="text-center">
+              © 2026 Isabella. All Rights Reserved
+            </p>
+
+            {/* Right - Developer Credit */}
+            <div className="flex flex-wrap  justify-center md:justify-start gap-4">
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms & Conditions
               </Link>
@@ -190,19 +191,6 @@ export default function Footer() {
                 Exchange Policy
               </Link>
             </div>
-
-            {/* Center - Copyright */}
-            <p className="text-center">
-              © 2026 Isabella. All Rights Reserved
-            </p>
-
-            {/* Right - Developer Credit */}
-            <p className="text-center md:text-right">
-              Developed by{' '}
-              <Link href="https://www.ikrastudio.in/" target='_blank' className="text-white hover:underline">
-                iKRA Studio
-              </Link>
-            </p>
           </div>
         </div>
       </div>

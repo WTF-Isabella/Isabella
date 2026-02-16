@@ -1,6 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { Cinzel } from 'next/font/google'
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['600'],
+})
 
 export default function FeaturedCollection() {
   return (
@@ -48,7 +54,7 @@ export default function FeaturedCollection() {
             {/* CTA Button */}
             <Link
               href="/collections/midnight-bloom"
-              className="inline-block px-8 py-3 border-2 border-black text-black text-sm uppercase tracking-wider font-semibold hover:bg-black hover:text-white transition-all duration-300"
+              className={`${cinzel.className} inline-block px-8 py-3 border-2 border-black text-black text-sm uppercase tracking-wider font-semibold hover:bg-black hover:text-white transition-all duration-300 rounded-xl`}
             >
               Discover Now
             </Link>

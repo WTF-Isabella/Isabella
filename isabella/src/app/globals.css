@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 0px; /* increase width if we wanna show scrollbar....uske bina aacha hai */
+}
+
+/* Track (background area) */
+::-webkit-scrollbar-track {
+  background: #f2f2f2;   /* light grey */
+  border-radius: 999px;
+}
+
+/* Scroll thumb */
+::-webkit-scrollbar-thumb {
+  background: #e2e2e2;   /* slightly darker grey */
+  border-radius: 999px;
+  border: 2px solid #f2f2f2; /* creates inner spacing effect */
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #bdbdbd;
 }

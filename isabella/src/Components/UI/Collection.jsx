@@ -4,6 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Cinzel } from 'next/font/google'
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['600'],
+})
 
 const tabs = [
   { id: "new-season", label: "NEW SEASON" },
@@ -171,7 +177,7 @@ export default function CollectionsSection() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-2 text-sm tracking-wider transition-all duration-300 ${
+              className={` ${cinzel.className} px-6 py-2 text-sm tracking-wider transition-all duration-300 rounded-xl ${
                 activeTab === tab.id
                   ? "bg-black text-white"
                   : "bg-gray-100 text-gray-800 hover:bg-gray-200"
@@ -236,7 +242,7 @@ export default function CollectionsSection() {
 
                   {/* Product Info */}
                   <div className="text-center">
-                    <h3 className="text-gray-600 text-sm mb-2 group-hover:text-gray-800 transition-colors">
+                    <h3 className={`${cinzel.className} text-gray-600 text-sm mb-2 group-hover:text-gray-800 transition-colors`}>
                       {product.name}
                     </h3>
                     <div className="flex items-center justify-center gap-2">
@@ -260,7 +266,7 @@ export default function CollectionsSection() {
         <div className="text-center mt-12">
           <Link
             href={`/collections/${activeTab}`}
-            className="inline-block px-8 py-3 bg-black text-white text-sm uppercase tracking-wider hover:bg-gray-800 transition-all duration-300"
+            className={`${cinzel.className} inline-block px-8 py-3 bg-black text-white text-sm uppercase tracking-wider hover:bg-gray-800 transition-all duration-300 rounded-xl`}
           >
             View All {tabs.find((t) => t.id === activeTab)?.label}
           </Link>

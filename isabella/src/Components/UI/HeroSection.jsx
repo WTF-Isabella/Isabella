@@ -1,36 +1,45 @@
-    'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Cinzel } from 'next/font/google'
+import Image from "next/image";
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['600'],
+})
 
 const slides = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80',
-    title: 'New Collection',
-    subtitle: 'Spring/Summer 2024',
-    description: 'Discover the latest trends in fashion',
-    buttonText: 'Shop Now',
-    buttonLink: '/collections/new',
+    image:
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80",
+    title: "New Collection",
+    subtitle: "Spring/Summer 2024",
+    description: "Discover the latest trends in fashion",
+    buttonText: "Shop Now",
+    buttonLink: "/collections/new",
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80',
-    title: 'Exclusive Designs',
-    subtitle: 'Limited Edition',
-    description: 'Elevate your style with our curated pieces',
-    buttonText: 'Explore',
-    buttonLink: '/collections/exclusive',
+    image:
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80",
+    title: "Exclusive Designs",
+    subtitle: "Limited Edition",
+    description: "Elevate your style with our curated pieces",
+    buttonText: "Explore",
+    buttonLink: "/collections/exclusive",
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1920&q=80',
-    title: 'Timeless Elegance',
-    subtitle: 'Classic Collection',
-    description: 'Where sophistication meets comfort',
-    buttonText: 'View Collection',
-    buttonLink: '/collections/classic',
+    image:
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1920&q=80",
+    title: "Timeless Elegance",
+    subtitle: "Classic Collection",
+    description: "Where sophistication meets comfort",
+    buttonText: "View Collection",
+    buttonLink: "/collections/classic",
   },
 ];
 
@@ -73,7 +82,7 @@ export default function HeroCarousel() {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
           {/* Background Image */}
@@ -83,7 +92,7 @@ export default function HeroCarousel() {
               className="w-full h-full bg-cover bg-center"
               style={{
                 backgroundImage: `url(${slide.image})`,
-                backgroundColor: '#1a1a1a', // Fallback color
+                backgroundColor: "#1a1a1a", // Fallback color
               }}
             />
             {/* Dark overlay */}
@@ -111,7 +120,8 @@ export default function HeroCarousel() {
               {/* CTA Button */}
               <a
                 href={slide.buttonLink}
-                className="inline-block px-8 md:px-12 py-3 md:py-4 bg-white text-black text-sm md:text-base uppercase tracking-wider font-semibold hover:bg-gray-100 transition-all duration-300 animate-fade-in-delay-2"
+                className={`${cinzel.className} inline-block px-6 py-3 bg-white/10 backdrop-blur-lg text-white text-sm md:text-xl uppercase tracking-wider font-semibold transition-all duration-300 animate-fade-in-delay-2 rounded-xl`}
+                // className={`${cinzel.className} inline-block px-6 py-3 bg-white text-black text-sm md:text-base uppercase tracking-wider font-semibold hover:bg-gray-100 transition-all duration-300 animate-fade-in-delay-2 rounded-xl`}
               >
                 {slide.buttonText}
               </a>
@@ -145,8 +155,8 @@ export default function HeroCarousel() {
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'bg-white w-8'
-                : 'bg-white/50 hover:bg-white/75'
+                ? "bg-white w-8"
+                : "bg-white/50 hover:bg-white/75"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
