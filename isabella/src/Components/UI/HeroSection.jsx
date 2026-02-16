@@ -13,33 +13,30 @@ const cinzel = Cinzel({
 const slides = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80",
-    title: "New Collection",
-    subtitle: "Spring/Summer 2024",
-    description: "Discover the latest trends in fashion",
-    buttonText: "Shop Now",
-    buttonLink: "/collections/new",
+    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80',
+    title: 'New Collection',
+    subtitle: 'Spring/Summer 2024',
+    description: 'Discover the latest trends in fashion',
+    buttonText: 'Shop Now',
+    buttonLink: '/Shopping',
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80",
-    title: "Exclusive Designs",
-    subtitle: "Limited Edition",
-    description: "Elevate your style with our curated pieces",
-    buttonText: "Explore",
-    buttonLink: "/collections/exclusive",
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=80',
+    title: 'Exclusive Designs',
+    subtitle: 'Limited Edition',
+    description: 'Elevate your style with our curated pieces',
+    buttonText: 'Explore',
+    buttonLink: '/Shopping',
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1920&q=80",
-    title: "Timeless Elegance",
-    subtitle: "Classic Collection",
-    description: "Where sophistication meets comfort",
-    buttonText: "View Collection",
-    buttonLink: "/collections/classic",
+    image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1920&q=80',
+    title: 'Timeless Elegance',
+    subtitle: 'Classic Collection',
+    description: 'Where sophistication meets comfort',
+    buttonText: 'View Collection',
+    buttonLink: '/Shopping',
   },
 ];
 
